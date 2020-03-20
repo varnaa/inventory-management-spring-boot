@@ -17,3 +17,4 @@ bootstrap css
 execute maven clean install -X command and run it in local server.
 
 #further modules and additional features will be released.
+#refer screenshot for preview
