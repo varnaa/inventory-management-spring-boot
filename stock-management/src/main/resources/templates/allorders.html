@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>All orders</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <!-- CSS For form-->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+  .border
+  {
+    border:thin black solid;
+    margin:30px;
+    padding:50px;
+  }
+
+  th {
+    text-align:center;
+    background-color: lightslategray;
+    color:black;
+}
+  </style>
+</head>
+
+</head>
+<body>
+
+    <header th:insert="/navbar.html :: header"></header>
+<br/>
+</br/>
+</br>
+<div class="container my-4">
+    <div class="d-flex justified-content-center">
+
+        <table class="table table-bordered table-hover table-striped">
+            <thead class="thead-dark" >
+                <tr>
+                    <th class="text-uppercase " scope="col">Order ID</th>
+                    <th class="text-uppercase " scope="col">Item ID</th>
+                    <th class="text-uppercase " scope="col">Created On</th>
+                    <th class="text-uppercase " scope="col">No:of items ordered</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="order: ${orders}">
+                    <td th:text="${order.orderID}" align="center"></td>
+                    <td th:text="${order.item_id}" align="center"></td>
+                    <td th:text="${order.orderCreatedOn}" align="center"></td>
+                    <td th:text="${order.quantity}" align="center"></td>
+                </tr>
+
+            </tbody>
+
+
+
+
+        </table>
+    </div>
+</div>
+</body>
+</body>
+</html>

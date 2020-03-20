@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>New item</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <!-- CSS For form-->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+  .border
+  {
+    border:thin black solid;
+    margin:30px;
+    padding:50px;
+  }
+  </style>
+</head>
+<body>
+  <header th:insert="/navbar.html :: header"></header>
+<div class="container">
+  <div class="d-flex justify-content-center">
+  <div class="row">
+    <div class="col-mid-4">
+  <form class="card p-3 bg-light" action=# th:object="${item}" th:action="@{/saveitem}" >
+    <h2 class="heading"><strong>Create new item</strong></h4>
+      <hr>
+      <div class="well well-sm">
+    <input type="hidden" name="id" th:field="${item.item_id}">
+    <div class="form-group col-lg-100">
+      <label for="exampleInputName2" class="col-sm-2 control-label">ITEM NAME:</label>
+      <input type="text" class="form-control" th:field="${item.itemname}" placeholder="item name">
+    </div>
+    <div class="form-group col-lg-100">
+        <label for="exampleInputName2" class="col-sm-2 control-label">ITEM DESCRIPTION: </label>
+        <input type="text" class="form-control" th:field="${item.item_description}" placeholder="item description">
+    </div>
+    <div class="form-group col-lg-100">
+          <label for="exampleInputName2" class="col-sm-2 control-label">CURRENT STOCK:</label>
+          <input type="number" class="form-control" th:field="${item.current_stock}" placeholder="current stock">
+    </div>
+  <button type="submit" class="btn btn-primary">save</button>
+
+    </div>
+    </form>
+  </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+</body>
+</html>
