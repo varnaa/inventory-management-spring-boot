@@ -23,17 +23,12 @@ public class MainController {
 	@Autowired 
 	private OrderService orderService;
 	
-	@GetMapping({"/","/index"})
-	public String getIndex() {
-		return "index";
-	}
-	
 	@GetMapping("/navbar")
 	public String getNavbar() {
 		return "navbar";
 	}
 	
-	@GetMapping("/allitems")
+	@GetMapping({"/allitems","/"})
 	public String getAllitems(Model model) {
 		model.addAttribute("items", service.findAll());
 		return "allitems";
